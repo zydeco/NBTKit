@@ -95,12 +95,13 @@
 
 - (BOOL)_writeChunk:(NSUInteger)num root:(NSDictionary*)root
 {
+    // compress data
+    NSData *chunkData = [NBTKit dataWithNBT:root name:NULL options:NBTCompressed+NBTUseZlib error:NULL];
+    NSUInteger chunkSectors = (chunkData.length+5+4095) / 4096;
+    if (chunkSectors > 255) return NO;
+    
     @synchronized(self) {
         if (root == nil || root.count == 0) return [self _writeChunkAllocation:num range:NSMakeRange(0, 0)];
-        
-        // compress data
-        NSData *chunkData = [NBTKit dataWithNBT:root name:NULL options:NBTCompressed+NBTUseZlib error:NULL];
-        NSUInteger chunkSectors = (chunkData.length+5+4095) / 4096;
         
         // ensure there's a MCR header
         [fileHandle seekToEndOfFile];
