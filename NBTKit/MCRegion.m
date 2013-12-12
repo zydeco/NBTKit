@@ -16,17 +16,21 @@
 
 - (instancetype)initWithFileAtPath:(NSString *)path
 {
+    int fd = open(path.fileSystemRepresentation, O_CREAT | O_RDWR);
+    if (fd < 0) return nil;
+    NSFileHandle *fh = [[NSFileHandle alloc] initWithFileDescriptor:fd closeOnDealloc:YES];
+    // if the file exists, it must be a valid mcr
+    if (![self _checkHeader]) return nil;
+    
     if ((self = [super init])) {
-        int fd = open(path.fileSystemRepresentation, O_CREAT | O_RDWR);
-        if (fd < 0) return nil;
-        fileHandle = [[NSFileHandle alloc] initWithFileDescriptor:fd closeOnDealloc:YES];
+        fileHandle = fh;
     }
     return self;
 }
 
 + (instancetype)mcrWithFileAtPath:(NSString *)path
 {
-    return [self mcrWithFileAtPath:path];
+    return [[self alloc] initWithFileAtPath:path];
 }
 
 // returns root tag or nil
@@ -64,6 +68,29 @@
         NSData *chunkData = [fileHandle readDataOfLength:chunkLength-1];
         return chunkData;
     }
+}
+
+- (BOOL)_checkHeader
+{
+    // check header exists
+    [fileHandle seekToEndOfFile];
+    unsigned long long fileSize = fileHandle.offsetInFile;
+    if (fileSize == 0) return YES; // empty file is valid
+    if (fileSize < 8192 || fileSize % 4096 != 0) return NO; // file must have 8K header, and be multiple of 4K (sector size)
+    
+    // read header
+    [fileHandle seekToFileOffset:0];
+    int maxSectors = 2;
+    NSData *header = [fileHandle readDataOfLength:4096];
+    for (NSUInteger i=0; i < 1024; i++) {
+        uint32_t loc = OSReadBigInt32(header.bytes, 4*i);
+        int offset = loc >> 8;
+        int sectors = loc & 0xFF;
+        maxSectors = MAX(maxSectors, offset+sectors);
+    }
+    
+    // check that file has all sectors
+    return maxSectors <= fileSize / 4096;
 }
 
 - (BOOL)_writeChunk:(NSUInteger)num root:(NSDictionary*)root
