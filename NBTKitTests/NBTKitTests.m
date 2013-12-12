@@ -282,7 +282,8 @@ static uint8_t dataSample[1000] = {
     MCRegion *mcr2 = [[MCRegion alloc] initWithFileAtPath:tmpPath];
     
     // rewrite
-    [mcr2 rewrite];
+    NSInteger saved = [mcr2 rewrite];
+    NSLog(@"Rewrite saved %ld bytes", (long)saved);
     
     // check chunks are equal
     BOOL chunksAllEqual = YES;

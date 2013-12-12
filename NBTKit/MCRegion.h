@@ -12,7 +12,7 @@
 
 + (instancetype)mcrWithFileAtPath:(NSString*)path;
 - (instancetype)initWithFileAtPath:(NSString*)path;
-- (BOOL)rewrite; // rewrite whole file
+- (NSInteger)rewrite;
 
 // chunk get/set
 // x and z are relative to this region (0-31)

@@ -175,9 +175,14 @@
     return [self _writeChunk:x + z*32 root:root];
 }
 
-- (BOOL)rewrite
+- (NSInteger)rewrite
 {
+    NSInteger savedSize = 0;
     @synchronized(self) {
+        // get current size
+        [fileHandle seekToEndOfFile];
+        unsigned long long oldSize = fileHandle.offsetInFile;
+        
         // read all chunks and check sizes
         NSMutableDictionary *chunks = [NSMutableDictionary dictionaryWithCapacity:1024];
         NSMutableDictionary *timestamps = [NSMutableDictionary dictionaryWithCapacity:1024];
@@ -186,7 +191,6 @@
             if (chunkData) {
                 chunks[@(i)] = chunkData;
                 timestamps[@(i)] = [self _chunkTimestamp:i];
-                if (chunkData.length + 5 > 255 * 4096) return NO; // chunk too big
             }
         }
         
@@ -220,12 +224,16 @@
             [fileHandle truncateFileAtOffset:(fileHandle.offsetInFile + 4095) &~ 4095ULL];
         }
         
+        // get end size
+        savedSize = oldSize - fileHandle.offsetInFile;
+        
         // write header
         [fileHandle seekToFileOffset:0];
         [fileHandle writeData:header];
         [fileHandle synchronizeFile];
     }
-    return YES;
+    
+    return savedSize;
 }
 
 - (BOOL)isEmpty
