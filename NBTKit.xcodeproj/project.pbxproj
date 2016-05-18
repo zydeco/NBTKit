@@ -251,7 +251,7 @@
 		28ED82B818491A6F00B08280 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = namedfork;
 				TargetAttributes = {
 					28ED82D718491A6F00B08280 = {
@@ -367,6 +367,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -384,7 +385,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -416,7 +417,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -431,6 +432,7 @@
 				GCC_PREFIX_HEADER = "NBTKit/NBTKit-Prefix.pch";
 				INFOPLIST_FILE = "NBTKit/NBTKit-Info.plist";
 				LD_DYLIB_INSTALL_NAME = "@loader_path/../Frameworks/$(EXECUTABLE_PATH)";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.namedfork.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -447,6 +449,7 @@
 				GCC_PREFIX_HEADER = "NBTKit/NBTKit-Prefix.pch";
 				INFOPLIST_FILE = "NBTKit/NBTKit-Info.plist";
 				LD_DYLIB_INSTALL_NAME = "@loader_path/../Frameworks/$(EXECUTABLE_PATH)";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.namedfork.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -468,6 +471,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "NBTKitTests/NBTKitTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.namedfork.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -486,6 +490,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NBTKit/NBTKit-Prefix.pch";
 				INFOPLIST_FILE = "NBTKitTests/NBTKitTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.namedfork.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
