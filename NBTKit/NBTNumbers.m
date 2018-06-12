@@ -24,6 +24,9 @@
 - (const char *)objCType NS_RETURNS_INNER_POINTER { return @encode(ctype);} \
 @end
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
+
 NSNUMBER_SUBCLASS(NBTByte, char, initWithChar, charValue)
 NSNUMBER_SUBCLASS(NBTShort, int16_t, initWithShort, shortValue)
 NSNUMBER_SUBCLASS(NBTInt, int32_t, initWithInt, intValue)
@@ -31,3 +34,4 @@ NSNUMBER_SUBCLASS(NBTLong, int64_t, initWithLongLong, longLongValue)
 NSNUMBER_SUBCLASS(NBTFloat, float, initWithFloat, floatValue)
 NSNUMBER_SUBCLASS(NBTDouble, double, initWithDouble, doubleValue)
 
+#pragma clang diagnostic pop
