@@ -36,7 +36,6 @@
         return [self readNamedTag:name];
     }
     @catch (NSException *exception) {
-        NSLog(@"Error reading NBT: %@", exception);
         if (error && exception.userInfo[@"error"]) *error = exception.userInfo[@"error"];
         return nil;
     }
@@ -87,7 +86,8 @@
 
 - (void)readError
 {
-    @throw [NSException exceptionWithName:@"NBTReadException" reason:stream.streamError.description userInfo:@{@"error": stream.streamError}];
+    NSDictionary *userInfo = stream.streamError ? @{@"error": stream.streamError} : nil;
+    @throw [NSException exceptionWithName:@"NBTReadException" reason:stream.streamError.description userInfo:userInfo];
 }
 
 #pragma mark Basic type reading
