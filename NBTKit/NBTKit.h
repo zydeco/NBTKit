@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, NBTKitError) {
     NBTTypeError
 };
 
-typedef NS_ENUM(NSUInteger, NBTOptions) {
+typedef NS_OPTIONS(NSUInteger, NBTOptions) {
     /// Read or write little endian NBT data (used by Minecraft Pocket Edition)
     NBTLittleEndian =   1 << 0,
     /// Read gzip or zlib, write gzip (used in compressed NBT files)
