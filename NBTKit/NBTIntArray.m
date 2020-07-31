@@ -144,11 +144,13 @@
 - (void)addValues:(const int32_t*)values count:(NSUInteger)count
 {
     [self _ensureAvailableSpaces:count];
-    memcpy(&storage[length], values, count*sizeof(int32_t));
+    memmove(&storage[length], values, count*sizeof(int32_t));
+    length += count;
 }
 
 - (void)addIntArray:(NBTIntArray*)intArray
 {
+    [self _ensureAvailableSpaces:intArray->length];
     [self addValues:intArray->storage count:intArray->length];
 }
 
@@ -171,7 +173,7 @@
     
     // copy new values
     if (count > 0) {
-        memcpy(&storage[range.location], values, sizeof(int32_t)*count);
+        memmove(&storage[range.location], values, sizeof(int32_t)*count);
     }
 }
 
@@ -180,6 +182,8 @@
     if (intArray == nil) {
         [self replaceRange:range withValues:NULL count:0];
     } else {
+        NSUInteger count = intArray->length;
+        if (count > range.length) [self _ensureAvailableSpaces:count-range.length];
         [self replaceRange:range withValues:intArray->storage count:intArray->length];
     }
 }

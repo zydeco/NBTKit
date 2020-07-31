@@ -227,6 +227,17 @@ static uint8_t dataSample[1000] = {
     [atmp replaceRange:NSMakeRange(0, 0) withValues:testData1 count:2];
     XCTAssertEqualObjects(a1, atmp, @"replace at beginning and end");
     
+    atmp = [NBTIntArray intArrayWithCapacity:0];
+    [atmp addIntArray:a1];
+    XCTAssertEqualObjects(a1, atmp, @"add int array");
+
+    NBTIntArray *atmp2 = a1.copy;
+    atmp = [NBTIntArray intArrayWithCapacity:0];
+    [atmp addIntArray:a1];
+    [atmp addIntArray:atmp];
+    [atmp2 addIntArray:a1];
+    XCTAssertEqualObjects(atmp, atmp2, @"add int array to itself");
+    
     NSMutableDictionary *bigTest2 = bigTest.mutableCopy;
     bigTest2[@"intArrayTest"] = a1;
     

@@ -144,11 +144,13 @@
 - (void)addValues:(const int64_t*)values count:(NSUInteger)count
 {
     [self _ensureAvailableSpaces:count];
-    memcpy(&storage[length], values, count*sizeof(int64_t));
+    memmove(&storage[length], values, count*sizeof(int64_t));
+    length += count;
 }
 
 - (void)addLongArray:(NBTLongArray *)array
 {
+    [self _ensureAvailableSpaces:array->length];
     [self addValues:array->storage count:array->length];
 }
 
@@ -171,7 +173,7 @@
     
     // copy new values
     if (count) {
-        memcpy(&storage[range.location], values, sizeof(int64_t)*count);
+        memmove(&storage[range.location], values, sizeof(int64_t)*count);
     }
 }
 
@@ -180,6 +182,8 @@
     if (array == nil) {
         [self replaceRange:range withValues:NULL count:0];
     } else {
+        NSUInteger count = array->length;
+        if (count > range.length) [self _ensureAvailableSpaces:count-range.length];
         [self replaceRange:range withValues:array->storage count:array->length];
     }
 }
