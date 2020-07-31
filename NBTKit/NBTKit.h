@@ -87,7 +87,7 @@ typedef NS_OPTIONS(NSUInteger, NBTOptions) {
 + (NSData *)dataWithNBT:(NSDictionary*)base name:(NSString*)name options:(NBTOptions)opt error:(NSError **)error;
 
 /**
- * Returns NBT data from a NSDictionary
+ * Writes NBT data to a stream
  *
  * @param base Root tag.
  * @param name Name of the root tag, or nil for no name.
@@ -99,7 +99,7 @@ typedef NS_OPTIONS(NSUInteger, NBTOptions) {
 + (NSInteger)writeNBT:(NSDictionary*)base name:(NSString*)name toStream:(NSOutputStream *)stream options:(NBTOptions)opt error:(NSError **)error;
 
 /**
- * Returns NBT data from a NSDictionary
+ * Writes NBT data to a file
  *
  * @param base Root tag.
  * @param name Name of the root tag, or nil for no name.
@@ -113,10 +113,10 @@ typedef NS_OPTIONS(NSUInteger, NBTOptions) {
 /**
  * Returns a Boolean value that indicates whether a given object can be converted to NBT data.
  *
- * Valid objects are: NSDictionary, NSArray, NSString, NSData, NBTIntArray, NBTByte, NBTShort, NBTInt, NBTLong, NBTFloat, NBTDouble
+ * Valid objects are: NSDictionary, NSArray, NSString, NSData, NBTIntArray, NBTLongArray, NBTByte, NBTShort, NBTInt, NBTLong, NBTFloat, NBTDouble
  *
  * @param obj Object to check
- * @return YES if obj can be converted to JSON data, otherwise NO.
+ * @return YES if obj can be converted to NBT data, otherwise NO.
  */
 + (BOOL)isValidNBTObject:(id)obj;
 
