@@ -170,12 +170,18 @@
     length += count - range.length;
     
     // copy new values
-    memcpy(&storage[range.location], values, sizeof(int32_t)*count);
+    if (count > 0) {
+        memcpy(&storage[range.location], values, sizeof(int32_t)*count);
+    }
 }
 
 - (void)replaceRange:(NSRange)range withIntArray:(NBTIntArray *)intArray
 {
-    [self replaceRange:range withValues:intArray->storage count:intArray->length];
+    if (intArray == nil) {
+        [self replaceRange:range withValues:NULL count:0];
+    } else {
+        [self replaceRange:range withValues:intArray->storage count:intArray->length];
+    }
 }
 
 - (void)resetRange:(NSRange)range
