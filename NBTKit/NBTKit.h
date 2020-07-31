@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "NBTNumbers.h"
 #import "NBTIntArray.h"
 #import "NBTLongArray.h"
 #import "MCRegion.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 extern NSString *NBTKitErrorDomain;
 
@@ -45,7 +48,7 @@ typedef NS_OPTIONS(NSUInteger, NBTOptions) {
  *
  * @return A NSMutableDictionary with the root tag, or nil if an error occurs.
  */
-+ (NSMutableDictionary*)NBTWithData:(NSData *)data name:(NSString **)name options:(NBTOptions)opt error:(NSError **)error;
++ (nullable NSMutableDictionary*)NBTWithData:(NSData *)data name:(NSString *_Nullable *_Nullable)name options:(NBTOptions)opt error:(NSError **)error;
 
 /**
  * Returns a mutable dictionary with the root tag from given NBT file.
@@ -59,7 +62,7 @@ typedef NS_OPTIONS(NSUInteger, NBTOptions) {
  *
  * @return A NSMutableDictionary with the root tag, or nil if an error occurs.
  */
-+ (NSMutableDictionary*)NBTWithFile:(NSString *)path name:(NSString **)name options:(NBTOptions)opt error:(NSError **)error;
++ (nullable NSMutableDictionary*)NBTWithFile:(NSString *)path name:(NSString *_Nullable *_Nullable)name options:(NBTOptions)opt error:(NSError **)error;
 
 /**
  * Returns a mutable dictionary with the root tag from given NBT file.
@@ -73,7 +76,7 @@ typedef NS_OPTIONS(NSUInteger, NBTOptions) {
  *
  * @return A NSMutableDictionary with the root tag, or nil if an error occurs.
  */
-+ (NSMutableDictionary*)NBTWithStream:(NSInputStream *)stream name:(NSString **)name options:(NBTOptions)opt error:(NSError **)error;
++ (nullable NSMutableDictionary*)NBTWithStream:(NSInputStream *)stream name:(NSString *_Nullable *_Nullable)name options:(NBTOptions)opt error:(NSError **)error;
 
 /**
  * Returns NBT data from a NSDictionary
@@ -84,7 +87,7 @@ typedef NS_OPTIONS(NSUInteger, NBTOptions) {
  * @param error If an error occurs, upon return contains an NSError object that describes the problem.
  * @return NSData object with the written data
  */
-+ (NSData *)dataWithNBT:(NSDictionary*)base name:(NSString*)name options:(NBTOptions)opt error:(NSError **)error;
++ (nullable NSData *)dataWithNBT:(NSDictionary*)base name:(nullable NSString*)name options:(NBTOptions)opt error:(NSError **)error;
 
 /**
  * Writes NBT data to a stream
@@ -96,7 +99,7 @@ typedef NS_OPTIONS(NSUInteger, NBTOptions) {
  * @param error If an error occurs, upon return contains an NSError object that describes the problem.
  * @return Number of bytes written, 0 on failure
  */
-+ (NSInteger)writeNBT:(NSDictionary*)base name:(NSString*)name toStream:(NSOutputStream *)stream options:(NBTOptions)opt error:(NSError **)error;
++ (NSInteger)writeNBT:(NSDictionary*)base name:(nullable NSString*)name toStream:(NSOutputStream *)stream options:(NBTOptions)opt error:(NSError **)error;
 
 /**
  * Writes NBT data to a file
@@ -108,7 +111,7 @@ typedef NS_OPTIONS(NSUInteger, NBTOptions) {
  * @param error If an error occurs, upon return contains an NSError object that describes the problem.
  * @return Number of bytes written, 0 on failure
  */
-+ (NSInteger)writeNBT:(NSDictionary*)base name:(NSString*)name toFile:(NSString *)path options:(NBTOptions)opt error:(NSError **)error;
++ (NSInteger)writeNBT:(NSDictionary*)base name:(nullable NSString*)name toFile:(NSString *)path options:(NBTOptions)opt error:(NSError **)error;
 
 /**
  * Returns a Boolean value that indicates whether a given object can be converted to NBT data.
@@ -121,3 +124,5 @@ typedef NS_OPTIONS(NSUInteger, NBTOptions) {
 + (BOOL)isValidNBTObject:(id)obj;
 
 @end
+
+NS_ASSUME_NONNULL_END

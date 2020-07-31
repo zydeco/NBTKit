@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 // initializer macros for NBT Numbers
 #define NBTByte(n)  [[NBTByte alloc] initWithChar:n]
 #define NBTShort(n) [[NBTShort alloc] initWithShort:n]
@@ -57,3 +59,5 @@
  */
 @interface NBTDouble : NSNumber
 @end
+
+NS_ASSUME_NONNULL_END

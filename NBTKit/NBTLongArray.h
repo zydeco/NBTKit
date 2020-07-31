@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  * @class NBTLongArray
  *
@@ -182,7 +184,7 @@
  * @param values The values to insert in the receiver's contents.
  * @param count The number of values to take from values.
  */
-- (void)replaceRange:(NSRange)range withValues:(int64_t*)values count:(NSUInteger)count;
+- (void)replaceRange:(NSRange)range withValues:(nullable int64_t*)values count:(NSUInteger)count;
 
 /**
  * Replaces with a given NBTLongArray a given range within the contents of the receiver.
@@ -196,6 +198,8 @@
  * @param range The range within the contents of the receiver to be replaced by zeros. The range must not exceed the bounds of the receiver.
  * @param array NBTLongArray with values to insert in the receiver's contents.
  */
-- (void)replaceRange:(NSRange)range withLongArray:(NBTLongArray*)array;
+- (void)replaceRange:(NSRange)range withLongArray:(nullable NBTLongArray*)array;
 
 @end
+
+NS_ASSUME_NONNULL_END
