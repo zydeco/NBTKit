@@ -17,6 +17,13 @@
 		28B72B2C184E0297001AC8A5 /* NBTKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 28ED82D118491A6F00B08280 /* NBTKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28B76EA624D41C1C0001C144 /* NBTLongArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 28B76EA424D41C1C0001C144 /* NBTLongArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28B76EA724D41C1C0001C144 /* NBTLongArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B76EA524D41C1C0001C144 /* NBTLongArray.m */; };
+		28B76EA924D4252A0001C144 /* NBTKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ED82D218491A6F00B08280 /* NBTKit.m */; };
+		28B76EAA24D4252A0001C144 /* NBTReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ED8310184930EB00B08280 /* NBTReader.m */; };
+		28B76EAB24D4252A0001C144 /* NBTWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ED831718496ABB00B08280 /* NBTWriter.m */; };
+		28B76EAC24D4252A0001C144 /* NBTNumbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ED830818491F6900B08280 /* NBTNumbers.m */; };
+		28B76EAD24D4252A0001C144 /* NBTIntArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 28353F041849DD9B00C6A091 /* NBTIntArray.m */; };
+		28B76EAE24D4252A0001C144 /* NBTLongArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B76EA524D41C1C0001C144 /* NBTLongArray.m */; };
+		28B76EAF24D4252A0001C144 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B76E9524D409D20001C144 /* main.m */; };
 		28ED82CF18491A6F00B08280 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28ED82CD18491A6F00B08280 /* InfoPlist.strings */; };
 		28ED82D318491A6F00B08280 /* NBTKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ED82D218491A6F00B08280 /* NBTKit.m */; };
 		28ED82DA18491A6F00B08280 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28ED82D918491A6F00B08280 /* XCTest.framework */; };
@@ -44,6 +51,18 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		28B76E9124D409D20001C144 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		28353F031849DD9B00C6A091 /* NBTIntArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBTIntArray.h; sourceTree = "<group>"; };
 		28353F041849DD9B00C6A091 /* NBTIntArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBTIntArray.m; sourceTree = "<group>"; };
@@ -51,6 +70,8 @@
 		28353F0E184A400500C6A091 /* bigtest.nbt */ = {isa = PBXFileReference; lastKnownFileType = file; path = bigtest.nbt; sourceTree = "<group>"; };
 		28353F10184A755B00C6A091 /* MCRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRegion.h; sourceTree = "<group>"; };
 		28353F11184A755B00C6A091 /* MCRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRegion.m; sourceTree = "<group>"; };
+		28B76E9324D409D20001C144 /* nbtdump */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = nbtdump; sourceTree = BUILT_PRODUCTS_DIR; };
+		28B76E9524D409D20001C144 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		28B76EA424D41C1C0001C144 /* NBTLongArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBTLongArray.h; sourceTree = "<group>"; };
 		28B76EA524D41C1C0001C144 /* NBTLongArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBTLongArray.m; sourceTree = "<group>"; };
 		28ED82C118491A6F00B08280 /* NBTKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NBTKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +101,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		28B76E9024D409D20001C144 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28ED82BD18491A6F00B08280 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,11 +130,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28B76E9424D409D20001C144 /* nbtdump */ = {
+			isa = PBXGroup;
+			children = (
+				28B76E9524D409D20001C144 /* main.m */,
+			);
+			path = nbtdump;
+			sourceTree = "<group>";
+		};
 		28ED82B718491A6F00B08280 = {
 			isa = PBXGroup;
 			children = (
 				28ED82CA18491A6F00B08280 /* NBTKit */,
 				28ED82DF18491A6F00B08280 /* NBTKitTests */,
+				28B76E9424D409D20001C144 /* nbtdump */,
 				28ED82C318491A6F00B08280 /* Frameworks */,
 				28ED82C218491A6F00B08280 /* Products */,
 			);
@@ -117,6 +154,7 @@
 			children = (
 				28ED82C118491A6F00B08280 /* NBTKit.framework */,
 				28ED82D818491A6F00B08280 /* NBTKitTests.xctest */,
+				28B76E9324D409D20001C144 /* nbtdump */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,6 +254,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		28B76E9224D409D20001C144 /* nbtdump */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28B76E9924D409D20001C144 /* Build configuration list for PBXNativeTarget "nbtdump" */;
+			buildPhases = (
+				28B76E8F24D409D20001C144 /* Sources */,
+				28B76E9024D409D20001C144 /* Frameworks */,
+				28B76E9124D409D20001C144 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = nbtdump;
+			productName = nbtdump;
+			productReference = 28B76E9324D409D20001C144 /* nbtdump */;
+			productType = "com.apple.product-type.tool";
+		};
 		28ED82C018491A6F00B08280 /* NBTKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28ED82E918491A6F00B08280 /* Build configuration list for PBXNativeTarget "NBTKit" */;
@@ -260,12 +315,20 @@
 			attributes = {
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = namedfork;
+				TargetAttributes = {
+					28B76E9224D409D20001C144 = {
+						CreatedOnToolsVersion = 11.5;
+						DevelopmentTeam = UJXNDZ5TNU;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 28ED82BB18491A6F00B08280 /* Build configuration list for PBXProject "NBTKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 28ED82B718491A6F00B08280;
@@ -275,6 +338,7 @@
 			targets = (
 				28ED82C018491A6F00B08280 /* NBTKit */,
 				28ED82D718491A6F00B08280 /* NBTKitTests */,
+				28B76E9224D409D20001C144 /* nbtdump */,
 			);
 		};
 /* End PBXProject section */
@@ -302,6 +366,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		28B76E8F24D409D20001C144 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28B76EA924D4252A0001C144 /* NBTKit.m in Sources */,
+				28B76EAA24D4252A0001C144 /* NBTReader.m in Sources */,
+				28B76EAB24D4252A0001C144 /* NBTWriter.m in Sources */,
+				28B76EAC24D4252A0001C144 /* NBTNumbers.m in Sources */,
+				28B76EAD24D4252A0001C144 /* NBTIntArray.m in Sources */,
+				28B76EAE24D4252A0001C144 /* NBTLongArray.m in Sources */,
+				28B76EAF24D4252A0001C144 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28ED82BC18491A6F00B08280 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,6 +432,78 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		28B76E9724D409D20001C144 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = UJXNDZ5TNU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		28B76E9824D409D20001C144 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = UJXNDZ5TNU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		28ED82E718491A6F00B08280 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -435,6 +585,7 @@
 				GCC_PREFIX_HEADER = "NBTKit/NBTKit-Prefix.pch";
 				INFOPLIST_FILE = "NBTKit/NBTKit-Info.plist";
 				LD_DYLIB_INSTALL_NAME = "@loader_path/../Frameworks/$(EXECUTABLE_PATH)";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.namedfork.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
@@ -452,6 +603,7 @@
 				GCC_PREFIX_HEADER = "NBTKit/NBTKit-Prefix.pch";
 				INFOPLIST_FILE = "NBTKit/NBTKit-Info.plist";
 				LD_DYLIB_INSTALL_NAME = "@loader_path/../Frameworks/$(EXECUTABLE_PATH)";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.namedfork.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
@@ -499,6 +651,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		28B76E9924D409D20001C144 /* Build configuration list for PBXNativeTarget "nbtdump" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28B76E9724D409D20001C144 /* Debug */,
+				28B76E9824D409D20001C144 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		28ED82BB18491A6F00B08280 /* Build configuration list for PBXProject "NBTKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
