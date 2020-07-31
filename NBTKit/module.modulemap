@@ -1,0 +1,4 @@
+framework module NBTKit {
+    umbrella header "NBTKit.h"
+    export *
+}

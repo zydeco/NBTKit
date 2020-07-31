@@ -74,6 +74,7 @@
 		28B76E9524D409D20001C144 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		28B76EA424D41C1C0001C144 /* NBTLongArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBTLongArray.h; sourceTree = "<group>"; };
 		28B76EA524D41C1C0001C144 /* NBTLongArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBTLongArray.m; sourceTree = "<group>"; };
+		28B76ED824D4576B0001C144 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		28ED82C118491A6F00B08280 /* NBTKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NBTKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28ED82C418491A6F00B08280 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		28ED82C718491A6F00B08280 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -199,6 +200,7 @@
 				28ED82CB18491A6F00B08280 /* Supporting Files */,
 				28353F10184A755B00C6A091 /* MCRegion.h */,
 				28353F11184A755B00C6A091 /* MCRegion.m */,
+				28B76ED824D4576B0001C144 /* module.modulemap */,
 			);
 			path = NBTKit;
 			sourceTree = "<group>";
@@ -578,6 +580,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -586,6 +589,7 @@
 				INFOPLIST_FILE = "NBTKit/NBTKit-Info.plist";
 				LD_DYLIB_INSTALL_NAME = "@loader_path/../Frameworks/$(EXECUTABLE_PATH)";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MODULEMAP_FILE = "$(SRCROOT)/NBTKit/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.namedfork.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
@@ -596,6 +600,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -604,6 +609,7 @@
 				INFOPLIST_FILE = "NBTKit/NBTKit-Info.plist";
 				LD_DYLIB_INSTALL_NAME = "@loader_path/../Frameworks/$(EXECUTABLE_PATH)";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MODULEMAP_FILE = "$(SRCROOT)/NBTKit/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.namedfork.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
