@@ -177,6 +177,7 @@ NSString *NBTKitErrorDomain = @"NBTKitErrorDomain";
     if ([obj isKindOfClass:[NSArray class]])        return NBT_List;
     if ([obj isKindOfClass:[NSDictionary class]])   return NBT_Compound;
     if ([obj isKindOfClass:[NBTIntArray class]])    return NBT_Int_Array;
+    if ([obj isKindOfClass:[NBTLongArray class]])   return NBT_Long_Array;
     return NBT_Invalid;
 }
 
@@ -217,6 +218,7 @@ NSString *NBTKitErrorDomain = @"NBTKitErrorDomain";
         case NBT_Byte_Array:
         case NBT_String:
         case NBT_Int_Array:
+        case NBT_Long_Array:
             return YES;
         case NBT_List:
             return [self _isValidList:obj];

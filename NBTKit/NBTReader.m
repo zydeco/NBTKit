@@ -79,6 +79,8 @@
         return [self readCompound];
     } else if (type == NBT_Int_Array) {
         return [self readIntArray];
+    } else if (type == NBT_Long_Array) {
+        return [self readLongArray];
     }
     
     @throw [NSException exceptionWithName:@"NBTTypeException" reason:[NSString stringWithFormat:@"Don't know how to read tag of type %d", type] userInfo:@{@"tag": @(type)}];
@@ -200,6 +202,18 @@
     }
     
     return intArray;
+}
+
+- (NBTLongArray*)readLongArray
+{
+    int32_t len = [self readInt];
+    NBTLongArray *longArray = [NBTLongArray longArrayWithCount:len];
+    int64_t *values = longArray.values;
+    while (len--) {
+        *values++ = [self readLong];
+    }
+    
+    return longArray;
 }
 
 @end

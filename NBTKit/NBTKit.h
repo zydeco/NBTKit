@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NBTNumbers.h"
 #import "NBTIntArray.h"
+#import "NBTLongArray.h"
 #import "MCRegion.h"
 
 extern NSString *NBTKitErrorDomain;

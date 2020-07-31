@@ -25,7 +25,8 @@ typedef NS_ENUM(int8_t, NBTType) {
     NBT_String,
     NBT_List,
     NBT_Compound,
-    NBT_Int_Array
+    NBT_Int_Array,
+    NBT_Long_Array
 };
 
 @interface NBTKit (Private)

@@ -70,6 +70,8 @@
             return [self writeString:obj];
         case NBT_Int_Array:
             return [self writeIntArray:obj];
+        case NBT_Long_Array:
+            return [self writeLongArray:obj];
         case NBT_List:
             return [self writeList:obj];
         case NBT_Compound:
@@ -191,6 +193,22 @@
     int32_t *values = array.values;
     for (NSUInteger i=0; i < array.count; i++) {
         bw += [self writeInt:values[i]];
+    }
+    
+    return bw;
+}
+
+- (NSInteger)writeLongArray:(NBTLongArray*)array
+{
+    NSInteger bw = 0;
+    
+    // length
+    bw += [self writeInt:(int32_t)array.count];
+    
+    // values
+    int64_t *values = array.values;
+    for (NSUInteger i=0; i < array.count; i++) {
+        bw += [self writeLong:values[i]];
     }
     
     return bw;
