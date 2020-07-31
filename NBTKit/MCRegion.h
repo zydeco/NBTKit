@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** @class MCRegion
  * Represents a region file (.mcr or .mca), and allows read/write access to its chunks.
  */
@@ -18,14 +20,14 @@
  * @param path Path to the file (if it doesn't exist, a new region file will be created).
  * @return An initialized MCRegion object representing the file at path, or nil if the file exists but isn't a valid region file.
  */
-+ (instancetype)mcrWithFileAtPath:(NSString*)path;
++ (nullable instancetype)mcrWithFileAtPath:(NSString*)path;
 
 /**
  * Initializes and returns a MCRegion object representing a file at a given path.
  * @param path Path to the file (if it doesn't exist, a new region file will be created).
  * @return An initialized MCRegion object representing the file at path, or nil if the file exists but isn't a valid region file.
  */
-- (instancetype)initWithFileAtPath:(NSString*)path;
+- (nullable instancetype)initWithFileAtPath:(NSString*)path;
 
 /**
  * Rewrites all the chunks in the file, getting rid of fragmentation.
@@ -43,7 +45,7 @@
  * @param z Z coordinate of the chunk (0-31)
  * @return the chunk's root tag, or nil if the chunk is empty or the coordinates are invalid
  */
-- (NSMutableDictionary*)getChunkAtX:(NSInteger)x Z:(NSInteger)z;
+- (nullable NSMutableDictionary*)getChunkAtX:(NSInteger)x Z:(NSInteger)z;
 
 /**
  * Writes a chunk to the region file, or removes it.
@@ -56,9 +58,11 @@
  * @param z Z coordinate of the chunk (0-31)
  * @return YES on success, NO if the chunk is too big or the coordinates are invalid
  */
-- (BOOL)setChunk:(NSDictionary*)root atX:(NSInteger)x Z:(NSInteger)z;
+- (BOOL)setChunk:(nullable NSDictionary*)root atX:(NSInteger)x Z:(NSInteger)z;
 
 /// YES if the region contains no chunks
 @property(nonatomic, readonly, getter=isEmpty) BOOL empty;
 
 @end
+
+NS_ASSUME_NONNULL_END
