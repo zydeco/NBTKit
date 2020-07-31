@@ -11,12 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 // initializer macros for NBT Numbers
+#ifndef NBTNUMBERS_M
 #define NBTByte(n)  [[NBTByte alloc] initWithChar:n]
 #define NBTShort(n) [[NBTShort alloc] initWithShort:n]
 #define NBTInt(n)   [[NBTInt alloc] initWithInt:n]
 #define NBTLong(n)  [[NBTLong alloc] initWithLongLong:n]
 #define NBTFloat(n) [[NBTFloat alloc] initWithFloat:n]
 #define NBTDouble(n)[[NBTDouble alloc] initWithDouble:n]
+#endif
 
 /** @class NBTByte
  * Represents a NBT byte value (8-bit integer), preserving the type it was created with.
@@ -30,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Created with NBTShort(value) macro
  */
 @interface NBTShort : NSNumber
+- (NSNumber *)initWithShort:(short)value NS_DESIGNATED_INITIALIZER;
 @end
 
 /** @class NBTInt
@@ -37,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Created with NBTInt(value) macro
  */
 @interface NBTInt : NSNumber
+- (NSNumber *)initWithInt:(int)value NS_DESIGNATED_INITIALIZER;
 @end
 
 /** @class NBTLong
@@ -44,6 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Created with NBTLong(value) macro
  */
 @interface NBTLong : NSNumber
+- (NSNumber *)initWithLongLong:(long long)value NS_DESIGNATED_INITIALIZER;
 @end
 
 /** @class NBTFloat
@@ -51,6 +56,8 @@ NS_ASSUME_NONNULL_BEGIN
  * Created with NBTFloat(value) macro
  */
 @interface NBTFloat : NSNumber
+- (NSNumber *)initWithFloat:(float)value NS_DESIGNATED_INITIALIZER;
+
 @end
 
 /** @class NBTDouble
@@ -58,6 +65,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Created with NBTDouble(value) macro
  */
 @interface NBTDouble : NSNumber
+- (NSNumber *)initWithDouble:(double)value NS_DESIGNATED_INITIALIZER;
 @end
 
 NS_ASSUME_NONNULL_END

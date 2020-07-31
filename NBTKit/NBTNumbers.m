@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 namedfork. All rights reserved.
 //
 
+#define NBTNUMBERS_M
 #import "NBTNumbers.h"
 #import "NBTKit_Private.h"
 
@@ -22,6 +23,8 @@
 + (NSValue *)value:(const void *)value withObjCType:(const char *)type { return [self valueWithBytes:value objCType:type]; } \
 - (void)getValue:(void *)value { *(ctype*)value = _value; } \
 - (const char *)objCType NS_RETURNS_INNER_POINTER { return @encode(ctype);} \
+- (NSString *)description { return [NSString stringWithFormat:@"%s(%@)", #name, [super description]];} \
+- (instancetype)initWithInteger:(NSInteger)value { return [self initWithX:(ctype)value];} \
 @end
 
 #pragma clang diagnostic push
@@ -35,3 +38,12 @@ NSNUMBER_SUBCLASS(NBTFloat, float, initWithFloat, floatValue)
 NSNUMBER_SUBCLASS(NBTDouble, double, initWithDouble, doubleValue)
 
 #pragma clang diagnostic pop
+
+// This allows NBTFloat to be instantiated in swift with a float literal, eg NBTFloat(3.0)
+@implementation NBTFloat (DoubleLiteralInitializer)
+
+- (instancetype)initWithDouble:(double)value {
+    return [self initWithFloat:(float)value];
+}
+
+@end
