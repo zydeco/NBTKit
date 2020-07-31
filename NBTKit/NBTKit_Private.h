@@ -32,6 +32,7 @@ typedef NS_ENUM(int8_t, NBTType) {
 + (NBTType)NBTTypeForObject:(id)obj;
 + (BOOL)_isValidList:(NSArray*)array;
 + (BOOL)_isValidCompound:(NSDictionary*)dict;
++ (NSError*)_errorFromException:(NSException*)exception;
 @end
 
 #endif

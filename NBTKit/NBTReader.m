@@ -36,7 +36,7 @@
         return [self readNamedTag:name];
     }
     @catch (NSException *exception) {
-        if (error && exception.userInfo[@"error"]) *error = exception.userInfo[@"error"];
+        if (error) *error = [NBTKit _errorFromException:exception];
         return nil;
     }
 }

@@ -30,7 +30,7 @@
         return [self writeTag:root withName:name];
     }
     @catch (NSException *exception) {
-        if (error) *error = [NSError errorWithDomain:NBTKitErrorDomain code:NBTWriteError userInfo:@{@"exception": exception}];
+        if (error) *error = [NBTKit _errorFromException:exception];
         return 0;
     }
 }

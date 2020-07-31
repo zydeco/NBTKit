@@ -153,7 +153,7 @@ NSString *NBTKitErrorDomain = @"NBTKitErrorDomain";
     } else {
         // check types
         if (![self isValidNBTObject:root]) {
-            if (error) *error = [NSError errorWithDomain:NBTKitErrorDomain code:NBTTypeError userInfo:nil];
+            if (error) *error = [NSError errorWithDomain:NBTKitErrorDomain code:NBTTypeError userInfo:@{NSLocalizedFailureReasonErrorKey: @"Invalid NBT object"}];
             return 0;
         }
         
@@ -162,9 +162,6 @@ NSString *NBTKitErrorDomain = @"NBTKitErrorDomain";
         writer.littleEndian = opt & NBTLittleEndian;
         return [writer writeRootTag:root withName:name error:error];
     }
-    
-    if (error) *error = [NSError errorWithDomain:NBTKitErrorDomain code:NBTInvalidArgError userInfo:@{@"options": @(opt)}];
-    return 0;
 }
 
 + (NBTType)NBTTypeForObject:(id)obj
@@ -230,6 +227,18 @@ NSString *NBTKitErrorDomain = @"NBTKitErrorDomain";
         default:
             return NO;
     }
+}
+
++ (NSError*)_errorFromException:(NSException*)exception
+{
+    if (exception.userInfo[@"error"]) {
+        return exception.userInfo[@"error"];
+    } else if ([exception.name isEqualToString:@"NBTTypeException"]) {
+        NSMutableDictionary *userInfo = exception.userInfo.mutableCopy;
+        userInfo[NSLocalizedFailureReasonErrorKey] = exception.reason;
+        return [NSError errorWithDomain:NBTKitErrorDomain code:NBTTypeError userInfo:userInfo];
+    }
+    return nil;
 }
 
 @end
