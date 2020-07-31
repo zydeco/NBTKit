@@ -184,11 +184,11 @@
     while (range.length--) storage[range.location++] = 0;
 }
 
-- (BOOL)isEqual:(NBTLongArray*)intArray
+- (BOOL)isEqual:(NBTLongArray*)array
 {
-    if (![intArray isKindOfClass:[NBTLongArray class]]) return NO;
-    if (intArray->length != length) return NO;
-    return memcmp(intArray->storage, storage, sizeof(int64_t)*length) == 0;
+    if (![array isKindOfClass:[NBTLongArray class]]) return NO;
+    if (array->length != length) return NO;
+    return memcmp(array->storage, storage, sizeof(int64_t)*length) == 0;
 }
 
 - (NSUInteger)hash
