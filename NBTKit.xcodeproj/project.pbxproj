@@ -87,7 +87,7 @@
 		28353F0E184A400500C6A091 /* bigtest.nbt */ = {isa = PBXFileReference; lastKnownFileType = file; path = bigtest.nbt; sourceTree = "<group>"; };
 		28353F10184A755B00C6A091 /* MCRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRegion.h; sourceTree = "<group>"; };
 		28353F11184A755B00C6A091 /* MCRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRegion.m; sourceTree = "<group>"; };
-		284B47F624D743DF001DDA26 /* NBTKit-iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "NBTKit-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		284B47F624D743DF001DDA26 /* NBTKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NBTKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		284B47F724D743DF001DDA26 /* NBTKit copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NBTKit copy-Info.plist"; path = "/Users/zydeco/Documents/Projects/Minecraft/NBTKit/NBTKit copy-Info.plist"; sourceTree = "<absolute>"; };
 		28B76E9324D409D20001C144 /* nbtdump */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = nbtdump; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B76E9524D409D20001C144 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 				28ED82C118491A6F00B08280 /* NBTKit.framework */,
 				28ED82D818491A6F00B08280 /* NBTKitTests.xctest */,
 				28B76E9324D409D20001C144 /* nbtdump */,
-				284B47F624D743DF001DDA26 /* NBTKit-iOS.framework */,
+				284B47F624D743DF001DDA26 /* NBTKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 			);
 			name = "NBTKit-iOS";
 			productName = NBTKit;
-			productReference = 284B47F624D743DF001DDA26 /* NBTKit-iOS.framework */;
+			productReference = 284B47F624D743DF001DDA26 /* NBTKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		28B76E9224D409D20001C144 /* nbtdump */ = {
@@ -537,8 +537,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MARKETING_VERSION = 1.1;
 				MODULEMAP_FILE = "$(SRCROOT)/NBTKit/module.modulemap";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.namedfork.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = net.namedfork.NBTKit;
+				PRODUCT_NAME = NBTKit;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = framework;
@@ -562,8 +562,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MARKETING_VERSION = 1.1;
 				MODULEMAP_FILE = "$(SRCROOT)/NBTKit/module.modulemap";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.namedfork.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = net.namedfork.NBTKit;
+				PRODUCT_NAME = NBTKit;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = framework;
