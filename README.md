@@ -12,19 +12,20 @@ Objective-C library for reading and writing Minecraft NBT and region files.
 ## Types
 NBT types are converted to and from native types according to the following table:
 
-| Tag Type         | Native Type           | Description                                          |
-|------------------|-----------------------|------------------------------------------------------|
-| `TAG_Byte`       | `NBTByte`             | Subclass of `NSNumber`, init with `NBTByte(n)`       |
-| `TAG_Short`      | `NBTShort`            | Subclass of `NSNumber`, init with `NBTShort(n)`      |
-| `TAG_Int`        | `NBTInt`              | Subclass of `NSNumber`, init with `NBTInt(n)`        |
-| `TAG_Long`       | `NBTLong`             | Subclass of `NSNumber`, init with `NBTLong(n)`       |
-| `TAG_Float`      | `NBTFloat`            | Subclass of `NSNumber`, init with `NBTFloat(n)`      |
-| `TAG_Double`     | `NBTDouble`           | Subclass of `NSNumber`, init with `NBTDouble(n)`     |
-| `TAG_Byte_Array` | `NSMutableData`       |                                                      |
-| `TAG_String`     | `NSString`            |                                                      |
-| `TAG_List`       | `NSMutableArray`      |                                                      |
-| `TAG_Compound`   | `NSMutableDictionary` |                                                      |
-| `TAG_Int_Array`  | `NBTIntArray`         | Similar to `NSMutableData`, holds `int32_t` values   |
+| Tag Type          | Native Type           | Description                                          |
+|-------------------|-----------------------|------------------------------------------------------|
+| `TAG_Byte`        | `NBTByte`             | Subclass of `NSNumber`, init with `NBTByte(n)`       |
+| `TAG_Short`       | `NBTShort`            | Subclass of `NSNumber`, init with `NBTShort(n)`      |
+| `TAG_Int`         | `NBTInt`              | Subclass of `NSNumber`, init with `NBTInt(n)`        |
+| `TAG_Long`        | `NBTLong`             | Subclass of `NSNumber`, init with `NBTLong(n)`       |
+| `TAG_Float`       | `NBTFloat`            | Subclass of `NSNumber`, init with `NBTFloat(n)`      |
+| `TAG_Double`      | `NBTDouble`           | Subclass of `NSNumber`, init with `NBTDouble(n)`     |
+| `TAG_Byte_Array`  | `NSMutableData`       |                                                      |
+| `TAG_String`      | `NSString`            |                                                      |
+| `TAG_List`        | `NSMutableArray`      |                                                      |
+| `TAG_Compound`    | `NSMutableDictionary` |                                                      |
+| `TAG_Int_Array`   | `NBTIntArray`         | Similar to `NSMutableData`, holds `int32_t` values   |
+| `TAG_Long_Array`  | `NBTLongArray`        | Similar to `NSMutableData`, holds `int64_t` values   |
 
 ### Numeric Types
 Numeric types are subclasses of `NSNumber`, so they all support `intValue`, `floatValue`, etc, but they
@@ -40,9 +41,9 @@ This class represents a mutable array of integers (`int32_t` values). It has sim
 ## Reading NBT
 `NBTKit` has the following class methods for reading NBT from files, streams or NSData objects:
 
-    + (NSMutableDictionary*)NBTWithData:(NSData *)data name:(NSString **)name options:(NBTOptions)opt error:(NSError **)error;
-    + (NSMutableDictionary*)NBTWithFile:(NSString *)path name:(NSString **)name options:(NBTOptions)opt error:(NSError **)error;
-    + (NSMutableDictionary*)NBTWithStream:(NSInputStream *)stream name:(NSString **)name options:(NBTOptions)opt error:(NSError **)error;
+    + (NSMutableDictionary<NSString*,NSObject*>*)NBTWithData:(NSData *)data name:(NSString **)name options:(NBTOptions)opt error:(NSError **)error;
+    + (NSMutableDictionary<NSString*,NSObject*>*)NBTWithFile:(NSString *)path name:(NSString **)name options:(NBTOptions)opt error:(NSError **)error;
+    + (NSMutableDictionary<NSString*,NSObject*>*)NBTWithStream:(NSInputStream *)stream name:(NSString **)name options:(NBTOptions)opt error:(NSError **)error;
 
 * `data`, `path`, `stream`: NBT to read.
 * `name`: This pointer is set to the name of the root tag. Pass `NULL` if not needed.
@@ -76,6 +77,7 @@ Valid objects are:
 * `NSString`
 * `NSData`
 * `NBTIntArray`
+* `NBTLongArray`
 * NBTKit Numbers: `NBTByte`, `NBTShort`, `NBTInt`, `NBTLong`, `NBTFloat`, `NBTDouble`
 
 ## Usage Example
