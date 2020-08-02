@@ -88,7 +88,6 @@
 		28353F10184A755B00C6A091 /* MCRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRegion.h; sourceTree = "<group>"; };
 		28353F11184A755B00C6A091 /* MCRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRegion.m; sourceTree = "<group>"; };
 		284B47F624D743DF001DDA26 /* NBTKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NBTKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		284B47F724D743DF001DDA26 /* NBTKit copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NBTKit copy-Info.plist"; path = "/Users/zydeco/Documents/Projects/Minecraft/NBTKit/NBTKit copy-Info.plist"; sourceTree = "<absolute>"; };
 		28B76E9324D409D20001C144 /* nbtdump */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = nbtdump; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B76E9524D409D20001C144 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		28B76EA424D41C1C0001C144 /* NBTLongArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBTLongArray.h; sourceTree = "<group>"; };
@@ -175,7 +174,6 @@
 				28B76E9424D409D20001C144 /* nbtdump */,
 				28ED82C318491A6F00B08280 /* Frameworks */,
 				28ED82C218491A6F00B08280 /* Products */,
-				284B47F724D743DF001DDA26 /* NBTKit copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
