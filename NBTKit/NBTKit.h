@@ -48,7 +48,7 @@ typedef NS_OPTIONS(NSUInteger, NBTOptions) {
  *
  * @return A NSMutableDictionary with the root tag, or nil if an error occurs.
  */
-+ (nullable NSMutableDictionary*)NBTWithData:(NSData *)data name:(NSString *_Nullable *_Nullable)name options:(NBTOptions)opt error:(NSError **)error;
++ (nullable NSMutableDictionary<NSString*,NSObject*>*)NBTWithData:(NSData *)data name:(NSString *_Nullable *_Nullable)name options:(NBTOptions)opt error:(NSError **)error;
 
 /**
  * Returns a mutable dictionary with the root tag from given NBT file.
@@ -62,7 +62,7 @@ typedef NS_OPTIONS(NSUInteger, NBTOptions) {
  *
  * @return A NSMutableDictionary with the root tag, or nil if an error occurs.
  */
-+ (nullable NSMutableDictionary*)NBTWithFile:(NSString *)path name:(NSString *_Nullable *_Nullable)name options:(NBTOptions)opt error:(NSError **)error;
++ (nullable NSMutableDictionary<NSString*,NSObject*>*)NBTWithFile:(NSString *)path name:(NSString *_Nullable *_Nullable)name options:(NBTOptions)opt error:(NSError **)error;
 
 /**
  * Returns a mutable dictionary with the root tag from given NBT file.
@@ -76,7 +76,7 @@ typedef NS_OPTIONS(NSUInteger, NBTOptions) {
  *
  * @return A NSMutableDictionary with the root tag, or nil if an error occurs.
  */
-+ (nullable NSMutableDictionary*)NBTWithStream:(NSInputStream *)stream name:(NSString *_Nullable *_Nullable)name options:(NBTOptions)opt error:(NSError **)error;
++ (nullable NSMutableDictionary<NSString*,NSObject*>*)NBTWithStream:(NSInputStream *)stream name:(NSString *_Nullable *_Nullable)name options:(NBTOptions)opt error:(NSError **)error;
 
 /**
  * Returns NBT data from a NSDictionary

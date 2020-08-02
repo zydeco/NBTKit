@@ -56,7 +56,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param array Array of NSNumber objects to initialize the NBTIntArray with.
  * @return A new NBTIntArray object with the values of the given array.
  */
-+ (instancetype)intArrayWithArray:(NSArray*)array;
++ (instancetype)intArrayWithArray:(NSArray<NSNumber*>*)array;
 
 /**
  * Returns an NBTIntArray object initialized with the given values.
@@ -95,7 +95,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param array Array of NSNumber objects to initialize the NBTIntArray with.
  * @return NBTIntArray object with the values of the given array.
  */
-- (instancetype)initWithArray:(NSArray*)array;
+- (instancetype)initWithArray:(NSArray<NSNumber*>*)array;
 
 /**
  * The number of elements contained in the receiver.
@@ -128,14 +128,14 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @return New NSArray containing NSNumber objects with the values of the receiver.
  */
-- (NSArray*)array;
+- (NSArray<NSNumber*>*)array;
 
 /**
  * Adds a value to the receiver.
  *
  * @param value Value to add.
  */
-- (void)addValue:(int32_t)value;
+- (void)addValue:(int32_t)value NS_SWIFT_NAME(add(value:));
 
 /** 
  * Adds values to the receiver.
@@ -143,7 +143,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param values Array of int32_t values to add to the receiver.
  * @param count The number of values to copy from values.
  */
-- (void)addValues:(const int32_t*)values count:(NSUInteger)count;
+- (void)addValues:(const int32_t*)values count:(NSUInteger)count NS_SWIFT_NAME(add(values:count:));
 
 /**
  * Adds values of a NBTIntArray to the receiver.
@@ -159,7 +159,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @param range The range within the contents of the receiver to be replaced by zeros. The range must not exceed the bounds of the receiver.
  */
-- (void)resetRange:(NSRange)range;
+- (void)resetRange:(NSRange)range NS_SWIFT_NAME(reset(range:));
 
 /**
  * Replaces with a given set of values a given range within the contents of the receiver.
