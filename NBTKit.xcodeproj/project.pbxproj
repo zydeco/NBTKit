@@ -14,6 +14,23 @@
 		28353F0F184A400500C6A091 /* bigtest.nbt in Resources */ = {isa = PBXBuildFile; fileRef = 28353F0E184A400500C6A091 /* bigtest.nbt */; };
 		28353F12184A755B00C6A091 /* MCRegion.h in Headers */ = {isa = PBXBuildFile; fileRef = 28353F10184A755B00C6A091 /* MCRegion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28353F13184A755B00C6A091 /* MCRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 28353F11184A755B00C6A091 /* MCRegion.m */; };
+		284B47DF24D743DF001DDA26 /* NBTReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ED8310184930EB00B08280 /* NBTReader.m */; };
+		284B47E024D743DF001DDA26 /* NBTIntArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 28353F041849DD9B00C6A091 /* NBTIntArray.m */; };
+		284B47E124D743DF001DDA26 /* NBTLongArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B76EA524D41C1C0001C144 /* NBTLongArray.m */; };
+		284B47E224D743DF001DDA26 /* NBTKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ED82D218491A6F00B08280 /* NBTKit.m */; };
+		284B47E324D743DF001DDA26 /* NBTNumbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ED830818491F6900B08280 /* NBTNumbers.m */; };
+		284B47E424D743DF001DDA26 /* NBTWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ED831718496ABB00B08280 /* NBTWriter.m */; };
+		284B47E524D743DF001DDA26 /* MCRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 28353F11184A755B00C6A091 /* MCRegion.m */; };
+		284B47E724D743DF001DDA26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28ED82C718491A6F00B08280 /* Foundation.framework */; };
+		284B47E824D743DF001DDA26 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 28353F07184A321700C6A091 /* libz.dylib */; };
+		284B47EA24D743DF001DDA26 /* NBTKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 28ED82D118491A6F00B08280 /* NBTKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		284B47EB24D743DF001DDA26 /* NBTNumbers.h in Headers */ = {isa = PBXBuildFile; fileRef = 28ED830718491F6900B08280 /* NBTNumbers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		284B47EC24D743DF001DDA26 /* NBTIntArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 28353F031849DD9B00C6A091 /* NBTIntArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		284B47ED24D743DF001DDA26 /* NBTLongArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 28B76EA424D41C1C0001C144 /* NBTLongArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		284B47EE24D743DF001DDA26 /* MCRegion.h in Headers */ = {isa = PBXBuildFile; fileRef = 28353F10184A755B00C6A091 /* MCRegion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		284B47EF24D743DF001DDA26 /* NBTWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 28ED831618496ABB00B08280 /* NBTWriter.h */; };
+		284B47F024D743DF001DDA26 /* NBTReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 28ED830F184930EB00B08280 /* NBTReader.h */; };
+		284B47F224D743DF001DDA26 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28ED82CD18491A6F00B08280 /* InfoPlist.strings */; };
 		28B72B2C184E0297001AC8A5 /* NBTKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 28ED82D118491A6F00B08280 /* NBTKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28B76EA624D41C1C0001C144 /* NBTLongArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 28B76EA424D41C1C0001C144 /* NBTLongArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28B76EA724D41C1C0001C144 /* NBTLongArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B76EA524D41C1C0001C144 /* NBTLongArray.m */; };
@@ -70,6 +87,8 @@
 		28353F0E184A400500C6A091 /* bigtest.nbt */ = {isa = PBXFileReference; lastKnownFileType = file; path = bigtest.nbt; sourceTree = "<group>"; };
 		28353F10184A755B00C6A091 /* MCRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRegion.h; sourceTree = "<group>"; };
 		28353F11184A755B00C6A091 /* MCRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRegion.m; sourceTree = "<group>"; };
+		284B47F624D743DF001DDA26 /* NBTKit-iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "NBTKit-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		284B47F724D743DF001DDA26 /* NBTKit copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NBTKit copy-Info.plist"; path = "/Users/zydeco/Documents/Projects/Minecraft/NBTKit/NBTKit copy-Info.plist"; sourceTree = "<absolute>"; };
 		28B76E9324D409D20001C144 /* nbtdump */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = nbtdump; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B76E9524D409D20001C144 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		28B76EA424D41C1C0001C144 /* NBTLongArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBTLongArray.h; sourceTree = "<group>"; };
@@ -102,6 +121,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		284B47E624D743DF001DDA26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				284B47E724D743DF001DDA26 /* Foundation.framework in Frameworks */,
+				284B47E824D743DF001DDA26 /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28B76E9024D409D20001C144 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,6 +175,7 @@
 				28B76E9424D409D20001C144 /* nbtdump */,
 				28ED82C318491A6F00B08280 /* Frameworks */,
 				28ED82C218491A6F00B08280 /* Products */,
+				284B47F724D743DF001DDA26 /* NBTKit copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +185,7 @@
 				28ED82C118491A6F00B08280 /* NBTKit.framework */,
 				28ED82D818491A6F00B08280 /* NBTKitTests.xctest */,
 				28B76E9324D409D20001C144 /* nbtdump */,
+				284B47F624D743DF001DDA26 /* NBTKit-iOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,6 +269,20 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		284B47E924D743DF001DDA26 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				284B47EA24D743DF001DDA26 /* NBTKit.h in Headers */,
+				284B47EB24D743DF001DDA26 /* NBTNumbers.h in Headers */,
+				284B47EC24D743DF001DDA26 /* NBTIntArray.h in Headers */,
+				284B47ED24D743DF001DDA26 /* NBTLongArray.h in Headers */,
+				284B47EE24D743DF001DDA26 /* MCRegion.h in Headers */,
+				284B47EF24D743DF001DDA26 /* NBTWriter.h in Headers */,
+				284B47F024D743DF001DDA26 /* NBTReader.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28ED82BE18491A6F00B08280 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +300,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		284B47DD24D743DF001DDA26 /* NBTKit-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 284B47F324D743DF001DDA26 /* Build configuration list for PBXNativeTarget "NBTKit-iOS" */;
+			buildPhases = (
+				284B47DE24D743DF001DDA26 /* Sources */,
+				284B47E624D743DF001DDA26 /* Frameworks */,
+				284B47E924D743DF001DDA26 /* Headers */,
+				284B47F124D743DF001DDA26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NBTKit-iOS";
+			productName = NBTKit;
+			productReference = 284B47F624D743DF001DDA26 /* NBTKit-iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		28B76E9224D409D20001C144 /* nbtdump */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28B76E9924D409D20001C144 /* Build configuration list for PBXNativeTarget "nbtdump" */;
@@ -315,6 +377,7 @@
 		28ED82B818491A6F00B08280 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = namedfork;
 				TargetAttributes = {
@@ -332,6 +395,7 @@
 			knownRegions = (
 				English,
 				en,
+				Base,
 			);
 			mainGroup = 28ED82B718491A6F00B08280;
 			productRefGroup = 28ED82C218491A6F00B08280 /* Products */;
@@ -339,6 +403,7 @@
 			projectRoot = "";
 			targets = (
 				28ED82C018491A6F00B08280 /* NBTKit */,
+				284B47DD24D743DF001DDA26 /* NBTKit-iOS */,
 				28ED82D718491A6F00B08280 /* NBTKitTests */,
 				28B76E9224D409D20001C144 /* nbtdump */,
 			);
@@ -346,6 +411,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		284B47F124D743DF001DDA26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				284B47F224D743DF001DDA26 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28ED82BF18491A6F00B08280 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -368,6 +441,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		284B47DE24D743DF001DDA26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				284B47DF24D743DF001DDA26 /* NBTReader.m in Sources */,
+				284B47E024D743DF001DDA26 /* NBTIntArray.m in Sources */,
+				284B47E124D743DF001DDA26 /* NBTLongArray.m in Sources */,
+				284B47E224D743DF001DDA26 /* NBTKit.m in Sources */,
+				284B47E324D743DF001DDA26 /* NBTNumbers.m in Sources */,
+				284B47E424D743DF001DDA26 /* NBTWriter.m in Sources */,
+				284B47E524D743DF001DDA26 /* MCRegion.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28B76E8F24D409D20001C144 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -434,6 +521,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		284B47F424D743DF001DDA26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NBTKit/NBTKit-Prefix.pch";
+				INFOPLIST_FILE = "NBTKit/NBTKit-Info.plist";
+				LD_DYLIB_INSTALL_NAME = "@loader_path/../Frameworks/$(EXECUTABLE_PATH)";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MODULEMAP_FILE = "$(SRCROOT)/NBTKit/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.namedfork.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		284B47F524D743DF001DDA26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NBTKit/NBTKit-Prefix.pch";
+				INFOPLIST_FILE = "NBTKit/NBTKit-Info.plist";
+				LD_DYLIB_INSTALL_NAME = "@loader_path/../Frameworks/$(EXECUTABLE_PATH)";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MODULEMAP_FILE = "$(SRCROOT)/NBTKit/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.namedfork.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 		28B76E9724D409D20001C144 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -657,6 +786,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		284B47F324D743DF001DDA26 /* Build configuration list for PBXNativeTarget "NBTKit-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				284B47F424D743DF001DDA26 /* Debug */,
+				284B47F524D743DF001DDA26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		28B76E9924D409D20001C144 /* Build configuration list for PBXNativeTarget "nbtdump" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

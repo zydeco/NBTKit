@@ -11,6 +11,7 @@
 
 #import "NBTKit.h"
 #import <Foundation/Foundation.h>
+#import <mach/vm_page_size.h>
 
 typedef NS_ENUM(int8_t, NBTType) {
     NBT_Invalid = -1,

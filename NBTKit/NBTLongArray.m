@@ -7,6 +7,7 @@
 //
 
 #import "NBTLongArray.h"
+#import "NBTKit_Private.h"
 
 @implementation NBTLongArray
 {
@@ -126,9 +127,7 @@
 - (void)_ensureAvailableSpaces:(NSUInteger)avail
 {
     if (capacity - length < avail) {
-        size_t new_size = (length + avail) * sizeof(int64_t);
-        // round up to page size
-        if (new_size % PAGE_SIZE) new_size += (PAGE_SIZE - (new_size % PAGE_SIZE));
+        size_t new_size = round_page((length + avail) * sizeof(int64_t));
         // embiggen the array
         storage = realloc(storage, new_size);
         capacity = new_size / sizeof(int64_t);
