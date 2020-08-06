@@ -12,7 +12,7 @@
 #import "NBTWriter.h"
 #import <zlib.h>
 
-NSString *NBTKitErrorDomain = @"NBTKitErrorDomain";
+NSErrorDomain const NBTKitErrorDomain = @"NBTKitErrorDomain";
 
 @implementation NBTKit
 
@@ -239,8 +239,13 @@ NSString *NBTKitErrorDomain = @"NBTKitErrorDomain";
         NSMutableDictionary *userInfo = exception.userInfo.mutableCopy;
         userInfo[NSLocalizedFailureReasonErrorKey] = exception.reason;
         return [NSError errorWithDomain:NBTKitErrorDomain code:NBTTypeError userInfo:userInfo];
+    } else if ([exception.name isEqualToString:@"NBTReadException"]) {
+        return [NSError errorWithDomain:NBTKitErrorDomain code:NBTReadError userInfo:exception.userInfo];
+    } else if ([exception.name isEqualToString:@"NBTWriteException"]) {
+        return [NSError errorWithDomain:NBTKitErrorDomain code:NBTWriteError userInfo:exception.userInfo];
+    } else {
+        return [NSError errorWithDomain:NBTKitErrorDomain code:NBTErrorGeneral userInfo:@{NSLocalizedFailureReasonErrorKey: exception.reason}];
     }
-    return nil;
 }
 
 @end

@@ -15,9 +15,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern NSString *NBTKitErrorDomain;
+extern NSErrorDomain const NBTKitErrorDomain;
 
-typedef NS_ENUM(NSInteger, NBTKitError) {
+typedef NS_ERROR_ENUM(NBTKitErrorDomain, NBTKitError) {
     NBTErrorGeneral = 0,
     NBTInvalidArgError,
     NBTReadError,

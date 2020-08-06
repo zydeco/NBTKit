@@ -83,9 +83,16 @@
     }
 }
 
-- (void)writeError:(NSDictionary*)userInfo
+- (void)writeError
 {
-    @throw [NSException exceptionWithName:@"NBTWriteException" reason:@"Write error" userInfo:userInfo];
+    NSMutableDictionary *userInfo = @{
+        NSLocalizedFailureReasonErrorKey: @"Error writing NBT.",
+        NSStreamFileCurrentOffsetKey: [stream propertyForKey:NSStreamFileCurrentOffsetKey]
+    }.mutableCopy;
+    if (stream.streamError) {
+        userInfo[@"error"] = stream.streamError;
+    }
+    @throw [NSException exceptionWithName:@"NBTWriteException" reason:stream.streamError.description ?: @"Error writing NBT." userInfo:userInfo];
 }
 
 #pragma mark - Write basic types
@@ -93,13 +100,13 @@
 - (NSInteger)write:(NSData*)data
 {
     if (data == nil || data.length == 0) return 0;
-    if ([stream write:data.bytes maxLength:data.length] != data.length) [self writeError:nil];
+    if ([stream write:data.bytes maxLength:data.length] != data.length) [self writeError];
     return data.length;
 }
 
 - (NSInteger)writeByte:(int8_t)val
 {
-    if ([stream write:(const uint8_t*)&val maxLength:1] != 1) [self writeError:nil];
+    if ([stream write:(const uint8_t*)&val maxLength:1] != 1) [self writeError];
     return 1;
 }
 
@@ -107,7 +114,7 @@
 {
     uint8_t buf[2];
     _littleEndian ? OSWriteLittleInt16(buf, 0, val) : OSWriteBigInt16(buf, 0, val);
-    if ([stream write:buf maxLength:sizeof buf] != 2) [self writeError:nil];
+    if ([stream write:buf maxLength:sizeof buf] != 2) [self writeError];
     return 2;
 }
 
@@ -115,7 +122,7 @@
 {
     uint8_t buf[4];
     _littleEndian ? OSWriteLittleInt32(buf, 0, val) : OSWriteBigInt32(buf, 0, val);
-    if ([stream write:buf maxLength:sizeof buf] != 4) [self writeError:nil];
+    if ([stream write:buf maxLength:sizeof buf] != 4) [self writeError];
     return 4;
 }
 
@@ -123,7 +130,7 @@
 {
     uint8_t buf[8];
     _littleEndian ? OSWriteLittleInt64(buf, 0, val) : OSWriteBigInt64(buf, 0, val);
-    if ([stream write:buf maxLength:sizeof buf] != 8) [self writeError:nil];
+    if ([stream write:buf maxLength:sizeof buf] != 8) [self writeError];
     return 8;
 }
 

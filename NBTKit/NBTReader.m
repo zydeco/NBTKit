@@ -88,8 +88,14 @@
 
 - (void)readError
 {
-    NSDictionary *userInfo = stream.streamError ? @{@"error": stream.streamError} : nil;
-    @throw [NSException exceptionWithName:@"NBTReadException" reason:stream.streamError.description userInfo:userInfo];
+    NSMutableDictionary *userInfo = @{
+        NSLocalizedFailureReasonErrorKey: @"Error reading NBT.",
+        NSStreamFileCurrentOffsetKey: [stream propertyForKey:NSStreamFileCurrentOffsetKey]
+    }.mutableCopy;
+    if (stream.streamError) {
+        userInfo[@"error"] = stream.streamError;
+    }
+    @throw [NSException exceptionWithName:@"NBTReadException" reason:stream.streamError.description ?: @"Error reading NBT." userInfo:userInfo];
 }
 
 #pragma mark Basic type reading
