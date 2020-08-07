@@ -148,6 +148,7 @@
 {
     // length
     int32_t len = [self readInt];
+    if (len < 0) [self readError];
     
     // data
     NSMutableData *data = [NSMutableData dataWithLength:len];
@@ -161,6 +162,7 @@
     // length
     int16_t len = [self readShort];
     if (len == 0) return @"";
+    if (len < 0) [self readError];
     
     // data
     uint8_t *buf = malloc(len);
@@ -176,6 +178,7 @@
     
     // length
     int32_t len = [self readInt];
+    if (len < 0) [self readError];
     
     // items
     NSMutableArray *list = [NSMutableArray arrayWithCapacity:len];
@@ -203,6 +206,7 @@
 - (NBTIntArray*)readIntArray
 {
     int32_t len = [self readInt];
+    if (len < 0) [self readError];
     NBTIntArray *intArray = [NBTIntArray intArrayWithCount:len];
     int32_t *values = intArray.values;
     while (len--) {
@@ -215,6 +219,7 @@
 - (NBTLongArray*)readLongArray
 {
     int32_t len = [self readInt];
+    if (len < 0) [self readError];
     NBTLongArray *longArray = [NBTLongArray longArrayWithCount:len];
     int64_t *values = longArray.values;
     while (len--) {
