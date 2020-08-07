@@ -86,9 +86,11 @@
 - (void)writeError
 {
     NSMutableDictionary *userInfo = @{
-        NSLocalizedFailureReasonErrorKey: @"Error writing NBT.",
-        NSStreamFileCurrentOffsetKey: [stream propertyForKey:NSStreamFileCurrentOffsetKey]
+        NSLocalizedFailureReasonErrorKey: @"Error writing NBT."
     }.mutableCopy;
+    if ([stream propertyForKey:NSStreamFileCurrentOffsetKey]) {
+        userInfo[NSStreamFileCurrentOffsetKey] = [stream propertyForKey:NSStreamFileCurrentOffsetKey];
+    }
     if (stream.streamError) {
         userInfo[@"error"] = stream.streamError;
     }
