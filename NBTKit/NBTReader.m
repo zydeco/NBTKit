@@ -45,7 +45,7 @@
 {
     // read tag
     uint8_t tag = [self readByte];
-    if (tag == NBT_End) return [NSNull null];
+    if (tag == NBTTypeEnd) return [NSNull null];
     
     // read name
     NSString *tagName = [self readString];
@@ -57,29 +57,29 @@
 
 - (id)readTagOfType:(NBTType)type
 {
-    if (type == NBT_Byte) {
+    if (type == NBTTypeByte) {
         return NBTByte([self readByte]);
-    } else if (type == NBT_Short) {
+    } else if (type == NBTTypeShort) {
         return NBTShort([self readShort]);
-    } else if (type == NBT_Int) {
+    } else if (type == NBTTypeInt) {
         return NBTInt([self readInt]);
-    } else if (type == NBT_Long) {
+    } else if (type == NBTTypeLong) {
         return NBTLong([self readLong]);
-    } else if (type == NBT_Float) {
+    } else if (type == NBTTypeFloat) {
         return NBTFloat([self readFloat]);
-    } else if (type == NBT_Double) {
+    } else if (type == NBTTypeDouble) {
         return NBTDouble([self readDouble]);
-    } else if (type == NBT_Byte_Array) {
+    } else if (type == NBTTypeByteArray) {
         return [self readByteArray];
-    } else if (type == NBT_String) {
+    } else if (type == NBTTypeString) {
         return [self readString];
-    } else if (type == NBT_List) {
+    } else if (type == NBTTypeList) {
         return [self readList];
-    } else if (type == NBT_Compound) {
+    } else if (type == NBTTypeCompound) {
         return [self readCompound];
-    } else if (type == NBT_Int_Array) {
+    } else if (type == NBTTypeIntArray) {
         return [self readIntArray];
-    } else if (type == NBT_Long_Array) {
+    } else if (type == NBTTypeLongArray) {
         return [self readLongArray];
     }
     
@@ -186,6 +186,7 @@
         [list addObject:[self readTagOfType:tag]];
     }
     
+    list.nbtListType = tag;
     return list;
 }
 

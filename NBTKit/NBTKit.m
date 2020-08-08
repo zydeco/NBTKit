@@ -166,19 +166,89 @@ NSErrorDomain const NBTKitErrorDomain = @"NBTKitErrorDomain";
 
 + (NBTType)NBTTypeForObject:(id)obj
 {
-    if ([obj isKindOfClass:[NBTByte class]])        return NBT_Byte;
-    if ([obj isKindOfClass:[NBTShort class]])       return NBT_Short;
-    if ([obj isKindOfClass:[NBTInt class]])         return NBT_Int;
-    if ([obj isKindOfClass:[NBTLong class]])        return NBT_Long;
-    if ([obj isKindOfClass:[NBTFloat class]])       return NBT_Float;
-    if ([obj isKindOfClass:[NBTDouble class]])      return NBT_Double;
-    if ([obj isKindOfClass:[NSData class]])         return NBT_Byte_Array;
-    if ([obj isKindOfClass:[NSString class]])       return NBT_String;
-    if ([obj isKindOfClass:[NSArray class]])        return NBT_List;
-    if ([obj isKindOfClass:[NSDictionary class]])   return NBT_Compound;
-    if ([obj isKindOfClass:[NBTIntArray class]])    return NBT_Int_Array;
-    if ([obj isKindOfClass:[NBTLongArray class]])   return NBT_Long_Array;
-    return NBT_Invalid;
+    if ([obj isKindOfClass:[NBTByte class]])        return NBTTypeByte;
+    if ([obj isKindOfClass:[NBTShort class]])       return NBTTypeShort;
+    if ([obj isKindOfClass:[NBTInt class]])         return NBTTypeInt;
+    if ([obj isKindOfClass:[NBTLong class]])        return NBTTypeLong;
+    if ([obj isKindOfClass:[NBTFloat class]])       return NBTTypeFloat;
+    if ([obj isKindOfClass:[NBTDouble class]])      return NBTTypeDouble;
+    if ([obj isKindOfClass:[NSData class]])         return NBTTypeByteArray;
+    if ([obj isKindOfClass:[NSString class]])       return NBTTypeString;
+    if ([obj isKindOfClass:[NSArray class]])        return NBTTypeList;
+    if ([obj isKindOfClass:[NSDictionary class]])   return NBTTypeCompound;
+    if ([obj isKindOfClass:[NBTIntArray class]])    return NBTTypeIntArray;
+    if ([obj isKindOfClass:[NBTLongArray class]])   return NBTTypeLongArray;
+    return NBTTypeInvalid;
+}
+
++ (Class)classForNBTType:(NBTType)type {
+    switch(type) {
+        case NBTTypeInvalid:
+            return nil;
+        case NBTTypeEnd:
+            return [NSNull class];
+        case NBTTypeByte:
+            return [NBTByte class];
+        case NBTTypeShort:
+            return [NBTShort class];
+        case NBTTypeInt:
+            return [NBTInt class];
+        case NBTTypeLong:
+            return [NBTLong class];
+        case NBTTypeFloat:
+            return [NBTFloat class];
+        case NBTTypeDouble:
+            return [NBTDouble class];
+        case NBTTypeByteArray:
+            return [NSData class];
+        case NBTTypeString:
+            return [NSString class];
+        case NBTTypeList:
+            return [NSArray class];
+        case NBTTypeCompound:
+            return [NSDictionary class];
+        case NBTTypeIntArray:
+            return [NBTIntArray class];
+        case NBTTypeLongArray:
+            return [NBTLongArray class];
+        default:
+            return nil;
+    }
+}
+
++ (NSString *)nameOfNBTType:(NBTType)type {
+    switch(type) {
+        case NBTTypeInvalid:
+            return nil;
+        case NBTTypeEnd:
+            return @"TAG_End";
+        case NBTTypeByte:
+            return @"TAG_Byte";
+        case NBTTypeShort:
+            return @"TAG_Short";
+        case NBTTypeInt:
+            return @"TAG_Int";
+        case NBTTypeLong:
+            return @"TAG_Long";
+        case NBTTypeFloat:
+            return @"TAG_Float";
+        case NBTTypeDouble:
+            return @"TAG_Double";
+        case NBTTypeByteArray:
+            return @"TAG_Byte_Array";
+        case NBTTypeString:
+            return @"TAG_String";
+        case NBTTypeList:
+            return @"TAG_List";
+        case NBTTypeCompound:
+            return @"TAG_Compound";
+        case NBTTypeIntArray:
+            return @"TAG_Int_Array";
+        case NBTTypeLongArray:
+            return @"TAG_Long_Array";
+        default:
+            return nil;
+    }
 }
 
 + (BOOL)_isValidList:(NSArray*)array
@@ -209,23 +279,23 @@ NSErrorDomain const NBTKitErrorDomain = @"NBTKitErrorDomain";
 + (BOOL)isValidNBTObject:(id)obj
 {
     switch ([self NBTTypeForObject:obj]) {
-        case NBT_Byte:
-        case NBT_Short:
-        case NBT_Int:
-        case NBT_Long:
-        case NBT_Float:
-        case NBT_Double:
-        case NBT_Byte_Array:
-        case NBT_String:
-        case NBT_Int_Array:
-        case NBT_Long_Array:
+        case NBTTypeByte:
+        case NBTTypeShort:
+        case NBTTypeInt:
+        case NBTTypeLong:
+        case NBTTypeFloat:
+        case NBTTypeDouble:
+        case NBTTypeByteArray:
+        case NBTTypeString:
+        case NBTTypeIntArray:
+        case NBTTypeLongArray:
             return YES;
-        case NBT_List:
+        case NBTTypeList:
             return [self _isValidList:obj];
-        case NBT_Compound:
+        case NBTTypeCompound:
             return [self _isValidCompound:obj];
-        case NBT_End:
-        case NBT_Invalid:
+        case NBTTypeEnd:
+        case NBTTypeInvalid:
         default:
             return NO;
     }

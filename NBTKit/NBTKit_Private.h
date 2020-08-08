@@ -13,28 +13,13 @@
 #import <Foundation/Foundation.h>
 #import <mach/vm_page_size.h>
 
-typedef NS_ENUM(int8_t, NBTType) {
-    NBT_Invalid = -1,
-    NBT_End,
-    NBT_Byte,
-    NBT_Short,
-    NBT_Int,
-    NBT_Long,
-    NBT_Float,
-    NBT_Double,
-    NBT_Byte_Array,
-    NBT_String,
-    NBT_List,
-    NBT_Compound,
-    NBT_Int_Array,
-    NBT_Long_Array
-};
-
 @interface NBTKit (Private)
-+ (NBTType)NBTTypeForObject:(id)obj;
-+ (BOOL)_isValidList:(NSArray*)array;
-+ (BOOL)_isValidCompound:(NSDictionary*)dict;
-+ (NSError*)_errorFromException:(NSException*)exception;
++ (BOOL)_isValidList:(nullable NSArray*)array;
++ (BOOL)_isValidCompound:(nullable NSDictionary*)dict;
++ (nonnull NSError*)_errorFromException:(nullable NSException*)exception;
 @end
 
+@interface NSArray (NBTListTypePrivate)
+- (void)setNbtListType:(NBTType)listType;
+@end
 #endif

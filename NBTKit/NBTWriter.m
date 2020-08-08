@@ -52,32 +52,32 @@
 - (NSInteger)writeTag:(id)obj ofType:(NBTType)tag
 {
     switch (tag) {
-        case NBT_Byte:
+        case NBTTypeByte:
             return [self writeByte:[obj charValue]];
-        case NBT_Short:
+        case NBTTypeShort:
             return [self writeShort:[obj shortValue]];
-        case NBT_Int:
+        case NBTTypeInt:
             return [self writeInt:[obj intValue]];
-        case NBT_Long:
+        case NBTTypeLong:
             return [self writeLong:[obj longLongValue]];
-        case NBT_Float:
+        case NBTTypeFloat:
             return [self writeFloat:[obj floatValue]];
-        case NBT_Double:
+        case NBTTypeDouble:
             return [self writeDouble:[obj doubleValue]];
-        case NBT_Byte_Array:
+        case NBTTypeByteArray:
             return [self writeByteArray:obj];
-        case NBT_String:
+        case NBTTypeString:
             return [self writeString:obj];
-        case NBT_Int_Array:
+        case NBTTypeIntArray:
             return [self writeIntArray:obj];
-        case NBT_Long_Array:
+        case NBTTypeLongArray:
             return [self writeLongArray:obj];
-        case NBT_List:
+        case NBTTypeList:
             return [self writeList:obj];
-        case NBT_Compound:
+        case NBTTypeCompound:
             return [self writeCompound:obj];
-        case NBT_End:
-        case NBT_Invalid:
+        case NBTTypeEnd:
+        case NBTTypeInvalid:
         default:
             @throw [NSException exceptionWithName:@"NBTTypeException" reason:@"Unknown tag ID" userInfo:@{@"tag":@(tag)}];
     }
@@ -167,7 +167,7 @@
 
 - (NSInteger)writeList:(NSArray*)list
 {
-    NBTType tag = NBT_Byte;
+    NBTType tag = NBTTypeByte;
     NSInteger bw = 0;
     if (list.count) tag = [NBTKit NBTTypeForObject:list.firstObject];
     bw += [self writeByte:tag];

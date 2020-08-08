@@ -13,6 +13,26 @@
 #import "NBTLongArray.h"
 #import "MCRegion.h"
 
+/**
+* Represents a type of value in a NBT
+ */
+typedef NS_ENUM(int8_t, NBTType) {
+    NBTTypeInvalid = -1,
+    NBTTypeEnd,
+    NBTTypeByte,
+    NBTTypeShort,
+    NBTTypeInt,
+    NBTTypeLong,
+    NBTTypeFloat,
+    NBTTypeDouble,
+    NBTTypeByteArray,
+    NBTTypeString,
+    NBTTypeList,
+    NBTTypeCompound,
+    NBTTypeIntArray,
+    NBTTypeLongArray
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 extern NSErrorDomain const NBTKitErrorDomain;
@@ -123,6 +143,35 @@ typedef NS_OPTIONS(NSUInteger, NBTOptions) {
  */
 + (BOOL)isValidNBTObject:(id)obj;
 
+/**
+* Returns the Obj-C class used for the given NBTType
+*
+* @param type NBT tag type
+* @returns Corresponding class, or nil if type is invalid.
+*/
++ (NBTType)NBTTypeForObject:(nullable id)obj;
+
+/**
+ * Returns the Obj-C class used for the given NBTType.
+ *
+ * @param type NBT tag type
+ * @returns Corresponding class, or nil if type is invalid.
+ */
++ (nullable Class)classForNBTType:(NBTType)type;
+
+/**
+ Returns the name of the given NBTType.
+ *
+ * @param type NBT tag type
+ * @returns Type name
+ */
++ (nullable NSString*)nameOfNBTType:(NBTType)type;
+
+@end
+
+@interface NSArray (NBTListType)
+/** The list type when the array was read from NBT, otherwise NBTTypeInvaild */
+@property (nonatomic, readonly) NBTType nbtListType;
 @end
 
 NS_ASSUME_NONNULL_END
