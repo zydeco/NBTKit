@@ -16,7 +16,13 @@ static void * NBTListTypeKey = &NBTListTypeKey;
 
 - (NBTType)nbtListType {
     NSNumber *assObj = objc_getAssociatedObject(self, NBTListTypeKey);
-    return assObj ? (NBTType)assObj.intValue : NBTTypeInvalid;
+    if (assObj == nil && self.count > 0 && [NBTKit _isValidList:self]) {
+        // set to type of first object
+        NBTType listType = [NBTKit NBTTypeForObject:self.firstObject];
+        assObj = @(listType);
+        objc_setAssociatedObject(self, NBTListTypeKey, assObj, OBJC_ASSOCIATION_COPY);
+    }
+    return assObj ? (NBTType)assObj.intValue : NBTTypeEnd;
 }
 
 @end
