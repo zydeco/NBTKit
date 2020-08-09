@@ -174,4 +174,9 @@ typedef NS_OPTIONS(NSUInteger, NBTOptions) {
 @property (nonatomic, readonly) NBTType nbtListType;
 @end
 
+@interface NSDictionary (NBTOrderedKeys)
+/** This is guaranteed to always return all keys. */
+@property (nonatomic, copy) NSOrderedSet<NSString*>* nbtOrderedKeys;
+@end
+
 NS_ASSUME_NONNULL_END

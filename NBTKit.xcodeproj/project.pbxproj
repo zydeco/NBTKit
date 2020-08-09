@@ -43,6 +43,7 @@
 		28B76EAF24D4252A0001C144 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B76E9524D409D20001C144 /* main.m */; };
 		28E64DFC24DEC84700DE6DD4 /* NSArray+NBTListType.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E64DF924DEC84700DE6DD4 /* NSArray+NBTListType.m */; };
 		28E64DFD24DEC84700DE6DD4 /* NSArray+NBTListType.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E64DF924DEC84700DE6DD4 /* NSArray+NBTListType.m */; };
+		28E64E0124E0262100DE6DD4 /* NSDictionary+NBTOrderedKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E64DFF24E0262100DE6DD4 /* NSDictionary+NBTOrderedKeys.m */; };
 		28ED82CF18491A6F00B08280 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28ED82CD18491A6F00B08280 /* InfoPlist.strings */; };
 		28ED82D318491A6F00B08280 /* NBTKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ED82D218491A6F00B08280 /* NBTKit.m */; };
 		28ED82DA18491A6F00B08280 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28ED82D918491A6F00B08280 /* XCTest.framework */; };
@@ -96,6 +97,7 @@
 		28B76EA524D41C1C0001C144 /* NBTLongArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBTLongArray.m; sourceTree = "<group>"; };
 		28B76ED824D4576B0001C144 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		28E64DF924DEC84700DE6DD4 /* NSArray+NBTListType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+NBTListType.m"; sourceTree = "<group>"; };
+		28E64DFF24E0262100DE6DD4 /* NSDictionary+NBTOrderedKeys.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NBTOrderedKeys.m"; sourceTree = "<group>"; };
 		28ED82C118491A6F00B08280 /* NBTKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NBTKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28ED82C418491A6F00B08280 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		28ED82C718491A6F00B08280 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -233,6 +235,7 @@
 				28353F11184A755B00C6A091 /* MCRegion.m */,
 				28B76ED824D4576B0001C144 /* module.modulemap */,
 				28E64DF924DEC84700DE6DD4 /* NSArray+NBTListType.m */,
+				28E64DFF24E0262100DE6DD4 /* NSDictionary+NBTOrderedKeys.m */,
 			);
 			path = NBTKit;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				28ED830A18491F6900B08280 /* NBTNumbers.m in Sources */,
 				28E64DFC24DEC84700DE6DD4 /* NSArray+NBTListType.m in Sources */,
 				28ED831918496ABB00B08280 /* NBTWriter.m in Sources */,
+				28E64E0124E0262100DE6DD4 /* NSDictionary+NBTOrderedKeys.m in Sources */,
 				28353F13184A755B00C6A091 /* MCRegion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

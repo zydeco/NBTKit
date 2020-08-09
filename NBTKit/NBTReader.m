@@ -193,14 +193,17 @@
 - (NSMutableDictionary*)readCompound
 {
     NSMutableDictionary *compound = [NSMutableDictionary new];
+    NSMutableOrderedSet<NSString*> *orderedKeys = [NSMutableOrderedSet orderedSet];
     
     for (;;) {
         NSString *name = nil;
         id obj = [self readNamedTag:&name];
         if (obj == [NSNull null]) break;
+        [orderedKeys addObject:name];
         compound[name] = obj;
     }
     
+    compound.nbtOrderedKeys = orderedKeys;
     return compound;
 }
 

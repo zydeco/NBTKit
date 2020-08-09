@@ -183,7 +183,7 @@
     NSInteger bw = 0;
     
     // items
-    for (NSString *key in dict.allKeys) {
+    for (NSString *key in dict.nbtOrderedKeys) {
         bw += [self writeTag:dict[key] withName:key];
     }
     // TAG_End
