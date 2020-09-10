@@ -537,7 +537,7 @@
 				GCC_PREFIX_HEADER = "NBTKit/NBTKit-Prefix.pch";
 				INFOPLIST_FILE = "NBTKit/NBTKit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_DYLIB_INSTALL_NAME = "@loader_path/../Frameworks/$(EXECUTABLE_PATH)";
+				LD_DYLIB_INSTALL_NAME = "@loader_path/Frameworks/$(EXECUTABLE_PATH)";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MARKETING_VERSION = 1.1;
 				MODULEMAP_FILE = "$(SRCROOT)/NBTKit/module.modulemap";
@@ -562,7 +562,7 @@
 				GCC_PREFIX_HEADER = "NBTKit/NBTKit-Prefix.pch";
 				INFOPLIST_FILE = "NBTKit/NBTKit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_DYLIB_INSTALL_NAME = "@loader_path/../Frameworks/$(EXECUTABLE_PATH)";
+				LD_DYLIB_INSTALL_NAME = "@loader_path/Frameworks/$(EXECUTABLE_PATH)";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MARKETING_VERSION = 1.1;
 				MODULEMAP_FILE = "$(SRCROOT)/NBTKit/module.modulemap";
