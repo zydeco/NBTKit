@@ -6,6 +6,8 @@
 //  Copyright © 2020 namedfork. All rights reserved.
 //
 
+#import "NBTKit.h"
+#import "NBTKit_Private.h"
 #import <objc/runtime.h>
 
 static void * NBTOrderedKeysKey = &NBTOrderedKeysKey;
